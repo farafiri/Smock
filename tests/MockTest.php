@@ -8,9 +8,9 @@ class MockTest extends PHPUnit_Framework_TestCase
 {
     protected function getSMock($mock, $extraData = array())
     {
-        return $this->getSMock($mock, $this, $extraData);
+        return Mock::getInstance()->get($mock, $this, $extraData);
     }
-    
+
     public function testGenerateClassWithoutConstructor()
     {
         $mock = $this->getSMock('Mock\tests\ResourceClasses\A');
@@ -79,7 +79,7 @@ class MockTest extends PHPUnit_Framework_TestCase
                                  getC -> "c" "b"
                                  getZ -> 345');
         } catch (\Mock\MockBuildException $e) {
-            $this->assertContains("\nline: 3, character: 55\n", $e->getMessage());
+            $this->assertContains("\nline: 3, character: 46\n", $e->getMessage());
 
             return 0;
         }

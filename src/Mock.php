@@ -39,13 +39,13 @@ class Mock
     {
         unset($this->useAliases[$alias]);
     }
-	
+
 	static public function getInstance()
 	{
 	    if (!static::$instance) {
 	        static::$instance = new static();
 	    }
-		
+
 		return static::$instance;
 	}
 	
@@ -402,7 +402,8 @@ class Mock
                 $this->updateContext($context, $node->getSubnode(0)->getMainNodes());
 			    $node = $node->getSubnode(1);
                 //Alias name after (get ... as $alias) is optional but we need it so we are going to made it up
-				if (empty($node->getSubnode(6))) {
+                //$node->getSubnode(6)
+				if ($node->getSubnode(6) === null) {
 				    $node->setSubnode(6, '$' . $this->generateVarName());
 				}
                 $result = '';
