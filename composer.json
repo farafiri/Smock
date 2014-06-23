@@ -1,0 +1,28 @@
+{
+    "name": "farafiri/SMock",
+    "description": "Mocking library for PHP",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "farafiri"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/farafiri/PHP-parsing-tool"
+        }
+    ],
+    "require" : {
+        "php": ">=5.3.0",
+        "phpunit/phpunit": "3.7.*",
+        "farafiri/PHP-parsing-tool": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mock\\tests\\": "tests/",
+            "Mock\\": "src/"
+        }
+    }
+}

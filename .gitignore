@@ -145,6 +145,8 @@ csx
 AppPackages/
 
 # Others
+vendor
+composer.lock
 sql/
 *.Cache
 ClientBin/
